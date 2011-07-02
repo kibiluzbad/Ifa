@@ -9,7 +9,11 @@ On your aspnet mvc 3 project instal using Nuget:
 	
 == Usage
 
-On your view call:
-  Html.Paginate(Model,url)
+Import Ifa to your view:
+  @using Ifa.Helpers
+  @using Ifa.Model
+
+and call the paginate method after the pagination target:
+  @Html.Paginate(Model,url)
 	
 Where Model should be a Ifa.Model.PagedResultViewModel and url should be a function expecting two parameters (itensPerPage and currentPage) and should return url string.
