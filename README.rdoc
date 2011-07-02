@@ -9,6 +9,7 @@ On your aspnet mvc 3 project instal using Nuget:
 	
 == Usage
 
+=== Default
 Import Ifa to your view:
   @using Ifa.Helpers
   @using Ifa.Model
@@ -17,3 +18,37 @@ and call the paginate method after the pagination target:
   @Html.Paginate(Model,url)
 	
 Where Model should be a Ifa.Model.PagedResultViewModel and url should be a function expecting two parameters (itensPerPage and currentPage) and should return url string.
+
+=== With ajax
+
+To use the pagination with ajax you just have to informe the AjaxOptions parameter after the url function. Like this:
+  @Html.Paginate(Model,url, new AjaxOptions { OnSuccess = "UpdateAjaxContent"})
+
+Is the same AjaxOptions used inside aspnet mvc AjaxHelper so you have the same options.
+In the sample above you have to create the UpdateAjaxContent function to update the pagination area.
+
+== Customize
+
+To change the default implementation of Ifa paginator you just have to create a folder in Views/Shared, named Ifa.
+Inside that folder you can create on partial view for each Ifá Paginator type:
+
+* CurrentPage - For the current page index
+
+* FirstPage - For the first page link
+
+* Gap - For truncate text
+
+* LastPage - For last page link
+
+* NextPage - For next page link
+
+* PageLink - For page links
+
+* PreviousPage - For previous page link
+
+So with I want to change the HTML for my current page, I have to create a partial view named CurrentPage.cshtml in Views/Shared/Ifa. My view code could looks like this one:
+  @model Ifa.Model.CurrentPage
+  <strong>@Model.GetText()</strong>
+
+Now my current page should be bold.
+
