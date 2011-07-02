@@ -1,11 +1,11 @@
-== Ifá
+== Ifa
 
 Ifá is a customizable paginator for aspnet mvc 3.
 
 == Install
 
 On your aspnet mvc 3 project instal using Nuget:
-	Install-Package Ifa
+  install-package Ifa
 	
 == Usage
 
