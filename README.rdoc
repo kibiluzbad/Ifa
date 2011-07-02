@@ -30,7 +30,7 @@ In the sample above you have to create the UpdateAjaxContent function to update 
 == Customize
 
 To change the default implementation of Ifa paginator you just have to create a folder in Views/Shared, named Ifa.
-Inside that folder you can create on partial view for each Ifá Paginator type:
+Inside that folder you can create on partial view for each Ifa Paginator type:
 
 * CurrentPage - For the current page index
 
