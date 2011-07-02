@@ -1,0 +1,15 @@
+== Ifá
+
+Ifá is a customizable paginator for aspnet mvc 3.
+
+== Install
+
+On your aspnet mvc 3 project instal using Nuget:
+	Install-Package Ifa
+	
+== Usage
+
+On your view call:
+	Html.Paginate(Model,url)
+	
+Where Model should be a Ifa.Model.PagedResultViewModel and url should be a function expecting two parameters (itensPerPage and currentPage) and should return url string.
