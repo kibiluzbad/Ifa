@@ -1,6 +1,6 @@
-== Ifa
+== If&#225;
 
-Ifá is a customizable paginator for aspnet mvc 3.
+If&#225; is a customizable paginator for aspnet mvc 3.
 
 == Install
 
