@@ -46,7 +46,7 @@ Inside that folder you can create on partial view for each Ifa Paginator type:
 
 * PreviousPage - For previous page link
 
-So with I want to change the HTML for my current page, I have to create a partial view named CurrentPage.cshtml in Views/Shared/Ifa. My view code could looks like this one:
+So if I want to change the HTML for my current page, I have to create a partial view named CurrentPage.cshtml in Views/Shared/Ifa. My view code could looks like this one:
   @model Ifa.Model.CurrentPage
   <strong>@Model.GetText()</strong>
 
