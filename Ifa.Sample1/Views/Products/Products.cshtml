@@ -1,0 +1,22 @@
+﻿@using Ifa.Model
+@using Ifa.Helpers
+
+@model PagedResultViewModel<Ifa.Sample1.Models.Product>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Value</th>
+        <th>CreatedAt</th>
+    </tr>
+    </thead>
+    <tbody>    
+@foreach (var product in Model.Result)
+{
+@Html.Partial("Product",product)
+}
+</tbody>
+</table>
+@Html.Paginate(Model, (itemsPerPage, currentPage) => Url.Action("Index", new { itemsPerPage, currentPage}))
