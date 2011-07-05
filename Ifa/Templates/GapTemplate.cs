@@ -17,11 +17,11 @@ namespace Ifa.Templates
         {
             var tag = GetModel<Tag>(html);
             return HtmlTagBuilder
-                .Build(MergeWithJaxaOptions(html, new Dictionary<string, object>
+                .Build(new Dictionary<string, object>
                                                       {
                                                           {"value", tag.GetText()},
                                                           {"class", "gap"}
-                                                      }));
+                                                      });
         }
     }
 }

@@ -17,11 +17,11 @@ namespace Ifa.Templates
         public override string Get(HtmlHelper html)
         {
             var tag = GetModel<Tag>(html);
-            return HtmlTagBuilder.Build(MergeWithJaxaOptions(html, new Dictionary<string, object>
+            return HtmlTagBuilder.Build(new Dictionary<string, object>
                                                                        {
                                                                            {"value", tag.GetText()},
                                                                            {"class", "currentPage"}
-                                                                       }));
+                                                                       });
         }
     }
 }
