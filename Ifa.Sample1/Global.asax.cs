@@ -22,6 +22,16 @@ namespace Ifa.Sample1
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "Default", // Route name
+                "{itemsPerPage}/{currentPage}", // URL with parameters
+                new
+                {
+                    controller = "Products",
+                    action = "Index"
+                }, // Parameter defaults
+                new { itemsPerPage = @"\d+", currentPage = @"\d+" });
+
+            routes.MapRoute(
                 "Root", // Route name
                 "", // URL with parameters
                 new
@@ -29,16 +39,7 @@ namespace Ifa.Sample1
                         controller = "Products",
                         action = "Index"
                     });
-
-            routes.MapRoute(
-                "Default", // Route name
-                "{itemsPerPage}/{currentPage}", // URL with parameters
-                new
-                    {
-                        controller = "Products",
-                        action = "Index"
-                    }, // Parameter defaults
-                new {itemsPerPage = @"\d+", currentPage = @"\d+"});
+            
         }
 
         protected void Application_Start()

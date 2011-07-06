@@ -19,4 +19,5 @@
 }
 </tbody>
 </table>
-@Html.Paginate(Model, (itemsPerPage, currentPage) => Url.Action("Index", new { itemsPerPage, currentPage}))
+<img src="@Url.Content("~/Content/images/ajax-loader.gif")" id="loading" style="display:none" />
+@Html.Paginate(Model, (itemsPerPage, currentPage) => Url.Action("Index", new { itemsPerPage, currentPage }), new AjaxOptions { OnSuccess = "UpdateProductsTable", LoadingElementId = "loading"})

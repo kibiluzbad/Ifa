@@ -43,7 +43,7 @@ namespace Ifa.Helpers
 
             paginator.Construct(builder);
 
-            return htmlHelper.DisplayFor(c => builder.Pagination, ajaxOptions);
+            return htmlHelper.DisplayFor(c => builder.Pagination,ajaxOptions);
         }
     }
 }

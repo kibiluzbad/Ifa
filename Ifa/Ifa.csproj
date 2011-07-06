@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Helpers\IfaDisplayExtensions.cs" />
+    <Compile Include="Helpers\IfaHelper.cs" />
     <Compile Include="Helpers\IfaTemplateHelpers.cs" />
     <Compile Include="Model\LinkToNextPage.cs" />
     <Compile Include="Model\LinkToNextPageBuilder.cs" />

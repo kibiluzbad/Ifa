@@ -41,8 +41,13 @@ namespace Ifa.Sample1.Controllers
             var products = _products.Skip((currentPage - 1)*itemsPerPage).Take(itemsPerPage);
             var result = new PagedResultViewModel<Product>(itemsPerPage, currentPage, _products.Count, products);
 
-            return View(result);
+            return IsAjaxReuqest() ? (ActionResult)PartialView("Products", result) : View(result);
         }
 
+        private bool IsAjaxReuqest()
+        {
+            return "XMLHttpRequest".Equals(Request.Headers["X-Requested-With"],
+                                           StringComparison.InvariantCultureIgnoreCase);
+        }
     }
 }

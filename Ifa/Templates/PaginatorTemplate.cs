@@ -30,10 +30,11 @@ namespace Ifa.Templates
             foreach (var metadata in
                 tags.Select(tag => ModelMetadataProviders.Current.GetMetadataForType(() => tag, tag.GetType())))
             {
+                var ajaxOptions = LinkBuilderHelper.GetAjaxOptions(html as IHasAjaxOptions);
                 paginator.Append(
                     IfaTemplateHelpers.TemplateHelper(html, metadata, null, null,
-                                                      DataBoundControlMode.ReadOnly, null,
-                                                      LinkBuilderHelper.GetAjaxOptions(html as IHasAjaxOptions)));
+                                                      DataBoundControlMode.ReadOnly, 
+                                                      new {ajaxOptions}, ajaxOptions));
             }
         }
     }
