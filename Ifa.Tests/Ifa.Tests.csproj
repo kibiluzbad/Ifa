@@ -54,17 +54,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseTemplateTest.cs" />
     <Compile Include="CurrentPageTemplateTests.cs" />
     <Compile Include="CurrentPageTests.cs" />
     <Compile Include="DefaultPaginationBuilderTests.cs" />
     <Compile Include="FakeHtmlHelper.cs" />
+    <Compile Include="FakeTemplateRender.cs" />
+    <Compile Include="FirstPageTemplateTests.cs" />
     <Compile Include="FirstPageTests.cs" />
+    <Compile Include="GapTemplateTests.cs" />
+    <Compile Include="LastPageTemplateTests.cs" />
     <Compile Include="LastPageTests.cs" />
     <Compile Include="LinkToNextPageBuilderTests.cs" />
     <Compile Include="LinkToNextPageTests.cs" />
+    <Compile Include="NextPageTemplateTests.cs" />
     <Compile Include="NextPageTests.cs" />
+    <Compile Include="PageLinkTemplateTests.cs" />
     <Compile Include="PageLinkTests.cs" />
+    <Compile Include="PaginatorTemplateTests.cs" />
     <Compile Include="PaginatorTests.cs" />
+    <Compile Include="PreviousPageTemplateTests.cs" />
     <Compile Include="PreviousPageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

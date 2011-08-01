@@ -1,41 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Web.Mvc;
-using System.Web.Mvc.Ajax;
 using System.Web.UI.WebControls;
 using Ifa.Helpers;
 using Ifa.Model;
+using Ifa.Templates.Builders;
+using Ifa.Templates.Helpers;
+using Ifa.Templates.Renders;
 
 namespace Ifa.Templates
 {
     public class PaginatorTemplate : BasicIfaTemplate
     {
+        public ITemplateRender TemplateRender { get; set; }
+        
+        public PaginatorTemplate()
+        {
+            HtmlTagBuilder = new DefaultPaginatorBuilder();
+            TemplateRender = new DefaultTemplateRender();
+        }
+
         public override string Get(HtmlHelper html)
         {
             var tags = GetModel<IEnumerable<Tag>>(html);
+            var innerTemplates = GetInnerTemplates(html, tags);
 
-            var paginator = new StringBuilder("<nav class=\"paginator\">\r\n<ul>\r\n");
-
-            AppendTags(html, tags, paginator);
-
-            paginator.Append("</ul>\r\n</nav>\r\n");
-
-            return paginator.ToString();
+            return HtmlTagBuilder.Build(new Dictionary<string, object>
+                                            {
+                                                {"innerTemplates", innerTemplates}
+                                            });
         }
 
-        private static void AppendTags(HtmlHelper html, IEnumerable<Tag> tags, StringBuilder paginator)
+        private IList<string> GetInnerTemplates(HtmlHelper html, IEnumerable<Tag> tags)
         {
-            foreach (var metadata in
-                tags.Select(tag => ModelMetadataProviders.Current.GetMetadataForType(() => tag, tag.GetType())))
-            {
-                var ajaxOptions = LinkBuilderHelper.GetAjaxOptions(html as IHasAjaxOptions);
-                paginator.Append(
-                    IfaTemplateHelpers.TemplateHelper(html, metadata, null, null,
-                                                      DataBoundControlMode.ReadOnly, 
-                                                      new {ajaxOptions}, ajaxOptions));
-            }
+            return
+                (from metadata in
+                     tags.Select(tag => ModelMetadataProviders
+                                            .Current
+                                            .GetMetadataForType(() => tag,
+                                                                tag.GetType()))
+                 let ajaxOptions = LinkBuilderHelper.GetAjaxOptions(html as IHasAjaxOptions)
+                 select TemplateRender.Render(html,
+                                                          metadata,
+                                                          null,
+                                                          null,
+                                                          DataBoundControlMode.ReadOnly,
+                                                          new { ajaxOptions },
+                                                          ajaxOptions))
+                    .ToList();
         }
     }
 }
