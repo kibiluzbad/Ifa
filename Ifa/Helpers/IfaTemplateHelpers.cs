@@ -42,7 +42,7 @@ namespace Ifa.Helpers
             DataBoundControlMode mode,
             GetViewNamesDelegate getViewNames,
             AjaxOptions ajaxOptions,
-            string ifaTemplate);
+            string ifaTheme);
 
         internal static string ExecuteTemplate(HtmlHelper html,
             ViewDataDictionary viewData,
@@ -50,14 +50,14 @@ namespace Ifa.Helpers
             DataBoundControlMode mode,
             GetViewNamesDelegate getViewNames,
             AjaxOptions ajaxOptions, 
-            string ifaTemplate)
+            string ifaTheme)
         {
             Dictionary<string, ActionCacheItem> actionCache = GetActionCache(html);
             Dictionary<string, Func<HtmlHelper, string>> defaultActions = DefaultIfaActions;
 
-            var modeViewPath = string.IsNullOrWhiteSpace(ifaTemplate)
+            var modeViewPath = string.IsNullOrWhiteSpace(ifaTheme)
                 ? IfaTemplatesPath
-                : string.Format("{0}/{1}", IfaTemplatesPath, ifaTemplate);
+                : string.Format("{0}/{1}", IfaTemplatesPath, ifaTheme);
 
             foreach (string viewName in getViewNames(viewData.ModelMetadata, templateName, viewData.ModelMetadata.TemplateHint, viewData.ModelMetadata.DataTypeName))
             {
@@ -139,14 +139,14 @@ namespace Ifa.Helpers
             yield return fieldType.Name;
         }
 
-        internal static MvcHtmlString Template(HtmlHelper html, string expression, string templateName, string htmlFieldName, DataBoundControlMode mode, object additionalViewData, AjaxOptions ajaxOptions, string ifaTemplate)
+        internal static MvcHtmlString Template(HtmlHelper html, string expression, string templateName, string htmlFieldName, DataBoundControlMode mode, object additionalViewData, AjaxOptions ajaxOptions, string ifaTheme)
         {
-            return MvcHtmlString.Create(Template(html, expression, templateName, htmlFieldName, mode, additionalViewData, TemplateHelper, ajaxOptions, ifaTemplate));
+            return MvcHtmlString.Create(Template(html, expression, templateName, htmlFieldName, mode, additionalViewData, TemplateHelper, ajaxOptions, ifaTheme));
         }
 
         // Unit testing version
         internal static string Template(HtmlHelper html, string expression, string templateName, string htmlFieldName,
-                                        DataBoundControlMode mode, object additionalViewData, TemplateHelperDelegate templateHelper, AjaxOptions ajaxOptions, string ifaTemplate)
+                                        DataBoundControlMode mode, object additionalViewData, TemplateHelperDelegate templateHelper, AjaxOptions ajaxOptions, string ifaTheme)
         {
             return templateHelper(html,
                                   ModelMetadata.FromStringExpression(expression, html.ViewData),
@@ -155,21 +155,21 @@ namespace Ifa.Helpers
                                   mode,
                                   additionalViewData,
                                   ajaxOptions,
-                                  ifaTemplate);
+                                  ifaTheme);
         }
 
         internal static MvcHtmlString TemplateFor<TContainer, TValue>(this HtmlHelper<TContainer> html, Expression<Func<TContainer, TValue>> expression,
                                                                       string templateName, string htmlFieldName, DataBoundControlMode mode,
                                                                       object additionalViewData,
-                                                                      AjaxOptions ajaxOptions, string ifaTemplate)
+                                                                      AjaxOptions ajaxOptions, string ifaTheme)
         {
-            return MvcHtmlString.Create(TemplateFor(html, expression, templateName, htmlFieldName, mode, additionalViewData, TemplateHelper, ajaxOptions, ifaTemplate));
+            return MvcHtmlString.Create(TemplateFor(html, expression, templateName, htmlFieldName, mode, additionalViewData, TemplateHelper, ajaxOptions, ifaTheme));
         }
 
         // Unit testing version
         internal static string TemplateFor<TContainer, TValue>(this HtmlHelper<TContainer> html, Expression<Func<TContainer, TValue>> expression,
                                                                string templateName, string htmlFieldName, DataBoundControlMode mode,
-                                                               object additionalViewData, TemplateHelperDelegate templateHelper, AjaxOptions ajaxOptions, string ifaTemplate)
+                                                               object additionalViewData, TemplateHelperDelegate templateHelper, AjaxOptions ajaxOptions, string ifaTheme)
         {
             return templateHelper(html,
                                   ModelMetadata.FromLambdaExpression(expression, html.ViewData),
@@ -177,10 +177,10 @@ namespace Ifa.Helpers
                                   templateName,
                                   mode,
                                   additionalViewData,
-                                  ajaxOptions, ifaTemplate);
+                                  ajaxOptions, ifaTheme);
         }
 
-        internal delegate string TemplateHelperDelegate(HtmlHelper html, ModelMetadata metadata, string htmlFieldName, string templateName, DataBoundControlMode mode, object additionalViewData, AjaxOptions ajaxOptions, string ifaTemplate);
+        internal delegate string TemplateHelperDelegate(HtmlHelper html, ModelMetadata metadata, string htmlFieldName, string templateName, DataBoundControlMode mode, object additionalViewData, AjaxOptions ajaxOptions, string ifaTheme);
 
         internal static string TemplateHelper(HtmlHelper html,
             ModelMetadata metadata,
@@ -189,9 +189,9 @@ namespace Ifa.Helpers
             DataBoundControlMode mode,
             object additionalViewData,
             AjaxOptions ajaxOptions,
-            string ifaTemplate)
+            string ifaTheme)
         {
-            return TemplateHelper(html, metadata, htmlFieldName, templateName, mode, additionalViewData, ExecuteTemplate, ajaxOptions, ifaTemplate);
+            return TemplateHelper(html, metadata, htmlFieldName, templateName, mode, additionalViewData, ExecuteTemplate, ajaxOptions, ifaTheme);
         }
 
         internal static string TemplateHelper(HtmlHelper html,
@@ -202,7 +202,7 @@ namespace Ifa.Helpers
             object additionalViewData,
             ExecuteTemplateDelegate executeTemplate,
             AjaxOptions ajaxOptions,
-            string ifaTemplate)
+            string ifaTheme)
         {
             // TODO: Convert Editor into Display if model.IsReadOnly is true? Need to be careful about this because
             // the Model property on the ViewPage/ViewUserControl is get-only, so the type descriptor automatically
@@ -245,7 +245,7 @@ namespace Ifa.Helpers
                 }
             };
 
-            viewData["ifaTemplate"] = ifaTemplate;
+            viewData["ifaTheme"] = ifaTheme;
 
             if (additionalViewData != null)
             {
@@ -257,7 +257,7 @@ namespace Ifa.Helpers
 
             //viewData.TemplateInfo.VisitedObjects.Add(visitedObjectsKey);    // DDB #224750
 
-            return executeTemplate(html, viewData, templateName, mode, GetViewNames, ajaxOptions,ifaTemplate);
+            return executeTemplate(html, viewData, templateName, mode, GetViewNames, ajaxOptions,ifaTheme);
         }
 
         // Helpers

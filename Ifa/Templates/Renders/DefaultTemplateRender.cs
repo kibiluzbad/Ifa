@@ -17,14 +17,14 @@ namespace Ifa.Templates.Renders
         private static string GetIfaTemplate(HtmlHelper html)
         {
             if (ThereIsATemplate(html))
-                return "" + html.ViewData["ifaTemplate"];
+                return "" + html.ViewData["ifaTheme"];
             return null;
         }
 
         private static bool ThereIsATemplate(HtmlHelper html)
         {
             return null != html &&
-                   html.ViewData.ContainsKey("ifaTemplate");
+                   html.ViewData.ContainsKey("ifaTheme");
         }
     }
 }

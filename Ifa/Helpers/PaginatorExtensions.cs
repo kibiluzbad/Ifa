@@ -11,7 +11,7 @@ namespace Ifa.Helpers
             PagedResultBase pagedResult, 
             Func<int, int, string> urlFunc,
             AjaxOptions ajaxOptions = null,
-            string ifaTemplate = null)
+            string ifaTheme = null)
         {
             if (null == htmlHelper) throw new ArgumentNullException("htmlHelper");
             if (null == pagedResult) throw new ArgumentNullException("pagedResult");
@@ -20,7 +20,7 @@ namespace Ifa.Helpers
             return DoPagination(htmlHelper,
                 ajaxOptions,
                 new DefaultPaginationBuilder(pagedResult,urlFunc),
-                ifaTemplate);
+                ifaTheme);
         }
 
         public static MvcHtmlString LinkToNextPage<TModel>(this HtmlHelper<TModel> htmlHelper,
@@ -42,13 +42,13 @@ namespace Ifa.Helpers
         internal static MvcHtmlString DoPagination<TModel>(HtmlHelper<TModel> htmlHelper,
             AjaxOptions ajaxOptions,
             PaginationBuilder builder,
-            string ifaTemplate)
+            string ifaTheme)
         {
             var paginator = new Paginator();
 
             paginator.Construct(builder);
 
-            return htmlHelper.DisplayFor(c => builder.Pagination,"Paginator",ajaxOptions,ifaTemplate);
+            return htmlHelper.DisplayFor(c => builder.Pagination,"Paginator",ajaxOptions,ifaTheme);
         }
     }
 }
