@@ -155,19 +155,19 @@
     <Content Include="Views\Products\Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\Ifa\NextPage.cshtml" />
+    <Content Include="Views\Shared\Ifa\custom\NextPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\Ifa\PreviousPage.cshtml" />
+    <Content Include="Views\Shared\Ifa\custom\PreviousPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\Ifa\FirstPage.cshtml" />
+    <Content Include="Views\Shared\Ifa\custom\FirstPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\Ifa\LastPage.cshtml" />
+    <Content Include="Views\Shared\Ifa\custom\LastPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\Ifa\CurrentPage.cshtml" />
+    <Content Include="Views\Shared\Ifa\custom\CurrentPage.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

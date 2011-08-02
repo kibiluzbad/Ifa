@@ -10,7 +10,8 @@ namespace Ifa.Helpers
         public static MvcHtmlString Paginate<TModel>(this HtmlHelper<TModel> htmlHelper,
             PagedResultBase pagedResult, 
             Func<int, int, string> urlFunc,
-            AjaxOptions ajaxOptions = null)
+            AjaxOptions ajaxOptions = null,
+            string ifaTemplate = null)
         {
             if (null == htmlHelper) throw new ArgumentNullException("htmlHelper");
             if (null == pagedResult) throw new ArgumentNullException("pagedResult");
@@ -18,13 +19,15 @@ namespace Ifa.Helpers
 
             return DoPagination(htmlHelper,
                 ajaxOptions,
-                new DefaultPaginationBuilder(pagedResult,urlFunc));
+                new DefaultPaginationBuilder(pagedResult,urlFunc),
+                ifaTemplate);
         }
 
         public static MvcHtmlString LinkToNextPage<TModel>(this HtmlHelper<TModel> htmlHelper,
             PagedResultBase pagedResult,
             Func<int, int, string> urlFunc,
-            AjaxOptions ajaxOptions = null)
+            AjaxOptions ajaxOptions = null,
+            string ifaTemplate = null)
         {
             if (null == htmlHelper) throw new ArgumentNullException("htmlHelper");
             if (null == pagedResult) throw new ArgumentNullException("pagedResult");
@@ -32,18 +35,20 @@ namespace Ifa.Helpers
 
             return DoPagination(htmlHelper,
                    ajaxOptions,
-                   new LinkToNextPageBuilder(pagedResult, urlFunc));
+                   new LinkToNextPageBuilder(pagedResult, urlFunc),
+                   ifaTemplate);
         }
 
         internal static MvcHtmlString DoPagination<TModel>(HtmlHelper<TModel> htmlHelper,
             AjaxOptions ajaxOptions,
-            PaginationBuilder builder)
+            PaginationBuilder builder,
+            string ifaTemplate)
         {
             var paginator = new Paginator();
 
             paginator.Construct(builder);
 
-            return htmlHelper.DisplayFor(c => builder.Pagination,"Paginator",ajaxOptions);
+            return htmlHelper.DisplayFor(c => builder.Pagination,"Paginator",ajaxOptions,ifaTemplate);
         }
     }
 }

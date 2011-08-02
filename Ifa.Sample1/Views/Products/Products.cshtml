@@ -2,7 +2,7 @@
 @using Ifa.Helpers
 
 @model PagedResultViewModel<Ifa.Sample1.Models.Product>
-
+@Html.Paginate(Model, (itemsPerPage, currentPage) => Url.Action("Index", new { itemsPerPage, currentPage }), new AjaxOptions { OnSuccess = "UpdateProductsTable", LoadingElementId = "loading" })
 <table>
     <thead>
     <tr>
@@ -15,9 +15,9 @@
     <tbody>    
 @foreach (var product in Model.Result)
 {
-@Html.Partial("Product",product)
+@Html.Partial("Product", product)
 }
 </tbody>
 </table>
 <img src="@Url.Content("~/Content/images/ajax-loader.gif")" id="loading" style="display:none" />
-@Html.Paginate(Model, (itemsPerPage, currentPage) => Url.Action("Index", new { itemsPerPage, currentPage }), new AjaxOptions { OnSuccess = "UpdateProductsTable", LoadingElementId = "loading"})
+@Html.Paginate(Model, (itemsPerPage, currentPage) => Url.Action("Index", new { itemsPerPage, currentPage }), new AjaxOptions { OnSuccess = "UpdateProductsTable", LoadingElementId = "loading" }, ifaTemplate: "custom")
