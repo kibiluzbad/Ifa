@@ -42,27 +42,6 @@ namespace Ifa.Model
             return 1 < _pagedResult.Pages;
         }
 
-        protected virtual int GetNoPageSize()
-        {
-            int leftLinkCount = ((_pagedResult.PageNumber - 1) > (_pagedResult.Window / 2))
-                                    ? (_pagedResult.Window / 2 - 1)
-                                    : (_pagedResult.PageNumber - 1);
-            return _pagedResult.PageNumber - leftLinkCount;
-        }
-
-        protected virtual int GetWindowStartIndex(int noPage)
-        {
-            return _pagedResult.Pages - noPage >= _pagedResult.Window
-                       ? noPage
-                       : _pagedResult.Pages - _pagedResult.Window + 1;
-        }
-
-        protected virtual bool IsInWindowRange(int current, int start, ref int pageCount)
-        {
-            return start <= current &&
-                   _pagedResult.Window >= pageCount++;
-        }
-
         protected virtual bool LastPageWasNotTruncated()
         {
             return !(_pagination.LastOrDefault() is Gap);
@@ -89,6 +68,21 @@ namespace Ifa.Model
             return new PageLink(i,
                                 _urlAction,
                                 _pagedResult.ItemsPerPage);
+        }
+
+        protected static bool LeftOuter(int page, int left)
+        {
+            return page <= left;
+        }
+
+        protected static bool RightOuter(int pages, int page, int right)
+        {
+            return (pages - page) < right;
+        }
+
+        protected static bool InsideWindow(int currentPage, int page, int window)
+        {
+            return Math.Abs(currentPage - page) <= window;
         }
     }
 }

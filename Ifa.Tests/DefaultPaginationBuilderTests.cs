@@ -429,7 +429,7 @@ namespace Ifa.Tests
             var mockPagedResult = new Mock<PagedResultBase>();
             mockPagedResult.SetupGet(c => c.PageNumber).Returns(10).Verifiable();
             mockPagedResult.SetupGet(c => c.Pages).Returns(12).Verifiable();
-            mockPagedResult.SetupGet(c => c.Window).Returns(10).Verifiable();
+            mockPagedResult.SetupGet(c => c.Window).Returns(4).Verifiable();
 
             PagedResultBase pagedResult = mockPagedResult.Object;
 
@@ -455,7 +455,7 @@ namespace Ifa.Tests
             var mockPagedResult = new Mock<PagedResultBase>();
             mockPagedResult.SetupGet(c => c.PageNumber).Returns(9).Verifiable();
             mockPagedResult.SetupGet(c => c.Pages).Returns(20).Verifiable();
-            mockPagedResult.SetupGet(c => c.Window).Returns(10).Verifiable();
+            mockPagedResult.SetupGet(c => c.Window).Returns(4).Verifiable();
 
             PagedResultBase pagedResult = mockPagedResult.Object;
 

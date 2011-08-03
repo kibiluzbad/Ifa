@@ -8,7 +8,9 @@ namespace Ifa.Model
         public virtual int Total { get; protected set; }
         public virtual int ItemsPerPage { get; protected set; }
         public virtual int PageNumber { get; protected set; }
-        public virtual int Window { get; protected set; }
+        public virtual int Window { get; set; }
+        public virtual int Left { get; set; }
+        public virtual int Right { get; set; }
 
         public virtual int Pages
         {
@@ -23,7 +25,9 @@ namespace Ifa.Model
             ItemsPerPage = itemsPerPage;
             PageNumber = pageNumber;
             Total = total;
-            Window = 10;
+            Window = 4;
+            Left = 0;
+            Right = 0;
         }
     }
 

@@ -5,8 +5,6 @@ namespace Ifa.Model
 {
     public class DefaultPaginationBuilder : PaginationBuilder
     {
-        
-        
         public DefaultPaginationBuilder(PagedResultBase pagedResult, Func<int,int,string> urlAction)
             : base(pagedResult,urlAction)
         { }
@@ -34,15 +32,11 @@ namespace Ifa.Model
         {
             if (HasPages())
             {
-                int noPage = GetNoPageSize();
-
-                int pageCount = 1;
-
-                int start = GetWindowStartIndex(noPage);
-
                 for (int i = 1; i <= _pagedResult.Pages; i++)
                 {
-                    if (IsInWindowRange(i, start, ref pageCount))
+                    if (LeftOuter(i, _pagedResult.Left) || 
+                        RightOuter(_pagedResult.Pages, i, _pagedResult.Right) || 
+                        InsideWindow(_pagedResult.PageNumber, i, _pagedResult.Window))
                         _pagination.Add(_pagedResult.PageNumber != i
                                             ? CreatePageLink(i)
                                             : CreateCurrentPageLink(i));

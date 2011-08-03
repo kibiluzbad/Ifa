@@ -24,5 +24,12 @@ namespace Ifa.Tests
         {
             return new CurrentPage(1, 3);
         }
+
+        [Test]
+        public void a()
+        {
+            var c = Math.Abs(1 - 8);
+            Assert.AreEqual(7,c);
+        }
     }
 }
