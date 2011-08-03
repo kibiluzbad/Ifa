@@ -52,3 +52,9 @@ So if I want to change the HTML for my current page, I have to create a partial 
 
 Now my current page should be bold.
 
+== Live Demo
+
+http://ifademo.apphb.com/
+
+
+
