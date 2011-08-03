@@ -82,6 +82,6 @@ nav.paginator ul .gap{margin-right:2px;}
   margin: 20px auto;   
   padding:10px;
 }
-table{width:100%}
-table th {background-color: #999; color:#fff;}
-table td {border: 1px solid #ccc;}
+table.data{width:100%}
+table.data th {background-color: #999; color:#fff;}
+table.data td {border: 1px solid #ccc;}

@@ -3,7 +3,7 @@
 
 @model PagedResultViewModel<Ifa.Sample1.Models.Product>
 @Html.Paginate(Model, (itemsPerPage, currentPage) => Url.Action("Index", new { itemsPerPage, currentPage }), new AjaxOptions { OnSuccess = "UpdateProductsTable", LoadingElementId = "loading" })
-<table>
+<table class="data">
     <thead>
     <tr>
         <th>Id</th>
@@ -20,4 +20,4 @@
 </tbody>
 </table>
 <img src="@Url.Content("~/Content/images/ajax-loader.gif")" id="loading" style="display:none" />
-@Html.Paginate(Model, (itemsPerPage, currentPage) => Url.Action("Index", new { itemsPerPage, currentPage }), new AjaxOptions { OnSuccess = "UpdateProductsTable", LoadingElementId = "loading" }, ifaTheme: "custom")
+@Html.Paginate(Model, (itemsPerPage, currentPage) => Url.Action("Index", new { itemsPerPage, currentPage }), new AjaxOptions { OnSuccess = "UpdateProductsTable", LoadingElementId = "loading" }, ifaTheme: "google")

@@ -246,6 +246,7 @@ namespace Ifa.Helpers
             };
 
             viewData["ifaTheme"] = ifaTheme;
+            viewData["ajaxOptions"] = ajaxOptions;
 
             if (additionalViewData != null)
             {
