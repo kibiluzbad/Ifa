@@ -73,6 +73,7 @@ textarea
 {
     display: none;
 }
+.clear{clear:both;}
 nav.paginator{text-align:center;}
 nav.paginator ul a {border:1px solid #ccc;padding:5px;margin-right:2px;}
 nav.paginator ul .currentPage {border:1px solid #ccc;padding:5px;margin-right:2px;}
@@ -85,3 +86,4 @@ nav.paginator ul .gap{margin-right:2px;}
 table.data{width:100%}
 table.data th {background-color: #999; color:#fff;}
 table.data td {border: 1px solid #ccc;}
+#themes{float:right;}

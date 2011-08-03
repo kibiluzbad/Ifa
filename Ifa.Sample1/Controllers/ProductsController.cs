@@ -36,10 +36,12 @@ namespace Ifa.Sample1.Controllers
         //
         // GET: /Products/
         public ActionResult Index([DefaultValue(10)]int itemsPerPage,
-            [DefaultValue(1)]int currentPage)
+            [DefaultValue(1)]int currentPage,
+            [DefaultValue("")]string theme)
         {
             var products = _products.Skip((currentPage - 1)*itemsPerPage).Take(itemsPerPage);
             var result = new PagedResultViewModel<Product>(itemsPerPage, currentPage, _products.Count, products);
+            ViewBag.Theme = theme;
 
             return IsAjaxReuqest() ? (ActionResult)PartialView("Products", result) : View(result);
         }

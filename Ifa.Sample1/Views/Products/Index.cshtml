@@ -4,7 +4,18 @@
 }
 
 <h2>Index</h2>
-
-<div id="products">
+<div id="themes">
+    <label for="theme">Theme: </label><select id="theme" name="theme" data-url="@Url.Action("Index", new { theme = "0"})">
+        <option value="">Default</option>
+        <option value="custom">Custom</option>
+        <option value="google">Google</option>
+    </select>
+</div>
+<div id="products" class="clear">
 @Html.Partial("Products",Model)
 </div>
+<script language="javascript">
+    $(document).ready(function () {
+        
+    });
+</script>

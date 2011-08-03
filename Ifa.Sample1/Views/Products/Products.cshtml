@@ -2,7 +2,7 @@
 @using Ifa.Helpers
 
 @model PagedResultViewModel<Ifa.Sample1.Models.Product>
-@Html.Paginate(Model, (itemsPerPage, currentPage) => Url.Action("Index", new { itemsPerPage, currentPage }), new AjaxOptions { OnSuccess = "UpdateProductsTable", LoadingElementId = "loading" })
+
 <table class="data">
     <thead>
     <tr>
@@ -20,4 +20,8 @@
 </tbody>
 </table>
 <img src="@Url.Content("~/Content/images/ajax-loader.gif")" id="loading" style="display:none" />
-@Html.Paginate(Model, (itemsPerPage, currentPage) => Url.Action("Index", new { itemsPerPage, currentPage }), new AjaxOptions { OnSuccess = "UpdateProductsTable", LoadingElementId = "loading" }, ifaTheme: "google")
+@if (string.IsNullOrWhiteSpace(ViewBag.Theme)){
+    @Html.Paginate(Model, (itemsPerPage, currentPage) => Url.Action("Index", new { itemsPerPage, currentPage, theme = (string)ViewBag.Theme}), new AjaxOptions { OnSuccess = "UpdateProductsTable", LoadingElementId = "loading" })
+}else{ 
+    @Html.Paginate(Model, (itemsPerPage, currentPage) => Url.Action("Index", new { itemsPerPage, currentPage, theme = (string)ViewBag.Theme }), new AjaxOptions { OnSuccess = "UpdateProductsTable", LoadingElementId = "loading" }, ifaTheme: (string)ViewBag.Theme)
+}
