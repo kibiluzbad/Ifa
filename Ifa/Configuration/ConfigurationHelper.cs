@@ -5,24 +5,34 @@ namespace Ifa.Configuration
 {
     public static class ConfigurationHelper
     {
-        internal static IfaConfiguration Config = new IfaConfiguration{ItemsPerPage = 10,
+        private static object _syncLock = new object();
+        private static IfaConfiguration _config = new IfaConfiguration
+        {
+            ItemsPerPage = 10,
             Left = 0,
             Right = 0,
-            Window = 4};
-        
+            Window = 4
+        };
+
         public static IfaConfiguration Get()
         {
-            return Config;
+            return _config;
         }
 
         public static void Configure(IfaConfiguration config)
         {
-            Config = config;
+            lock (_syncLock)
+            {
+                _config = config;
+            }
         }
 
         public static void Configure(FluentConfiguration config)
         {
-            Config = config.Configure();
+            lock (_syncLock)
+            {
+                _config = config.Configure();
+            }
         }
     }
 }
