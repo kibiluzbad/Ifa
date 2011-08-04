@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Ifa.Model;
 using Ifa.Sample1.Models;
+using Ifa.Helpers;
 
 namespace Ifa.Sample1.Controllers
 {
@@ -39,8 +40,8 @@ namespace Ifa.Sample1.Controllers
             [DefaultValue(1)]int currentPage,
             [DefaultValue("")]string theme)
         {
-            var products = _products.Skip((currentPage - 1)*itemsPerPage).Take(itemsPerPage);
-            var result = new PagedResultViewModel<Product>(itemsPerPage, currentPage, _products.Count, products);
+            var result = _products.AsQueryable().Page(currentPage);
+
             ViewBag.Theme = theme;
 
             return IsAjaxReuqest() ? (ActionResult)PartialView("Products", result) : View(result);

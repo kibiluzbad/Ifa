@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Ifa.Configuration.Fluentlty;
 
 namespace Ifa.Sample1
 {
@@ -48,6 +49,13 @@ namespace Ifa.Sample1
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            Ifa.Configuration.ConfigurationHelper.Configure(new FluentConfiguration()
+                                                                .Setup(new IfaConfigurationSetup()
+                                                                           .ItemsPerPage(20)
+                                                                           .Left(1)
+                                                                           .Right(1)
+                                                                           .Window(4)));
         }
     }
 }

@@ -38,9 +38,14 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ConfigurationHelper.cs" />
+    <Compile Include="Configuration\Fluentlty\FluentConfiguration.cs" />
+    <Compile Include="Configuration\IfaConfiguration.cs" />
+    <Compile Include="Configuration\Fluentlty\IfaConfigurationSetup.cs" />
     <Compile Include="Helpers\IfaDisplayExtensions.cs" />
     <Compile Include="Helpers\IfaHelper.cs" />
     <Compile Include="Helpers\IfaTemplateHelpers.cs" />
+    <Compile Include="Helpers\QueryableExtensions.cs" />
     <Compile Include="Model\LinkToNextPage.cs" />
     <Compile Include="Model\LinkToNextPageBuilder.cs" />
     <Compile Include="Helpers\PaginatorExtensions.cs" />
@@ -85,6 +90,7 @@
     <None Include="Model\ClassDiagram.cd" />
     <None Include="Templates\ClassDiagram.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

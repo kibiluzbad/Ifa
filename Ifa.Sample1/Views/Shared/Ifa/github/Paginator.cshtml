@@ -1,0 +1,30 @@
+﻿@using Ifa.Helpers
+@using Ifa.Model
+@model IEnumerable<Ifa.Model.Tag>
+<style>
+.pagination a{
+    border: 1px solid #AAAADD;
+    color: #336699;
+    margin: 0.2em;
+    padding: 0.1em 0.3em;
+    text-decoration: none;
+}
+.pagination span.current {
+    background-color: #336699;
+    border: 1px solid #336699;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin: 0.2em;
+    padding: 0.1em 0.3em;
+}
+</style>
+<br />
+<div class="pagination">
+    @foreach (var tag in Model
+                .RemoveTagsByType(typeof(FirstPage),
+                typeof(LastPage),
+                typeof(NextPage),
+                typeof(PreviousPage))) { 
+                @Html.DisplayForTheme(tag)
+            }
+</div>

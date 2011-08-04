@@ -1,0 +1,2 @@
+﻿@model Ifa.Model.PageLink
+<a class="pager_link" href="@Model.GetUrl()" @Ifa.Helpers.IfaHelper.GetAjaxAttributes((AjaxOptions)ViewData["ajaxOptions"])>@Model.GetText()</a>
