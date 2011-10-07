@@ -11,17 +11,17 @@ namespace Ifa.Templates.Renders
         public string Render(HtmlHelper html, ModelMetadata metadata, string htmlFieldName, string templateName, DataBoundControlMode readOnly, object additionalViewData, AjaxOptions ajaxOptions)
         {
             return IfaTemplateHelpers.TemplateHelper(html, metadata, htmlFieldName, templateName, readOnly,
-                                                     additionalViewData, ajaxOptions, GetIfaTemplate(html));
+                                                     additionalViewData, ajaxOptions, GetIfaTheme(html));
         }
 
-        private static string GetIfaTemplate(HtmlHelper html)
+        private static string GetIfaTheme(HtmlHelper html)
         {
-            if (ThereIsATemplate(html))
+            if (ThereIsATheme(html))
                 return "" + html.ViewData["ifaTheme"];
             return null;
         }
 
-        private static bool ThereIsATemplate(HtmlHelper html)
+        private static bool ThereIsATheme(HtmlHelper html)
         {
             return null != html &&
                    html.ViewData.ContainsKey("ifaTheme");

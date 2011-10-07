@@ -81,6 +81,9 @@
     <Compile Include="Templates\PreviousPageTemplate.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.2.0.0\lib\net40-client\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -88,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Model\ClassDiagram.cd" />
+    <None Include="packages.config" />
     <None Include="Templates\ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup />
