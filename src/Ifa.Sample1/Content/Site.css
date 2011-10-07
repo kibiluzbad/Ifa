@@ -1,0 +1,89 @@
+body
+{
+    font-size: .85em;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+
+fieldset 
+{
+    border:1px solid #ddd;
+    padding:0 1.4em 1.4em 1.4em;
+    margin:0 0 1.5em 0;
+}
+
+legend 
+{
+    font-size:1.2em;
+    font-weight: bold;
+}
+
+textarea 
+{
+    min-height: 75px;
+}
+
+.editor-label 
+{
+    margin: 1em 0 0 0;
+}
+
+.editor-field 
+{
+    margin:0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+.clear{clear:both;}
+nav.paginator{text-align:center;}
+nav.paginator ul a {border:1px solid #ccc;padding:5px;margin-right:2px;}
+nav.paginator ul .currentPage {border:1px solid #ccc;padding:5px;margin-right:2px;}
+nav.paginator ul .gap{margin-right:2px;}
+#container{
+  width:940px;
+  margin: 20px auto;   
+  padding:10px;
+}
+table.data{width:100%}
+table.data th {background-color: #999; color:#fff;}
+table.data td {border: 1px solid #ccc;}
+#themes{float:right;}

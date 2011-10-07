@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Ifa.Model.CurrentPage">
+    <Position X="2.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAQAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Model\CurrentPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ifa.Model.Tag">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAgAAAQAAAAAQAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Tag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ifa.Model.DefaultPaginationBuilder">
+    <Position X="2" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAA=</HashCode>
+      <FileName>Model\DefaultPaginationBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ifa.Model.FirstPage">
+    <Position X="13.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\FirstPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ifa.Model.LastPage">
+    <Position X="7" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAQIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\LastPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ifa.Model.NextPage">
+    <Position X="11.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAQIAAAAAAABAAAAAA=</HashCode>
+      <FileName>Model\NextPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ifa.Model.PagedResultBase">
+    <Position X="7" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAgAAAAAAABAAAAQAAAAAAACAAAAAA=</HashCode>
+      <FileName>Model\PagedResultViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ifa.Model.PagedResultViewModel&lt;TResult&gt;">
+    <Position X="7" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\PagedResultViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ifa.Model.PageLink">
+    <Position X="9.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAgAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\PageLink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ifa.Model.PaginationBuilder">
+    <Position X="3.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gABARAIAAAAAAgAAAAAEAgAAIAAAgAAIQQAAAAAQoRA=</HashCode>
+      <FileName>Model\PaginationBuilder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Pagination" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Ifa.Model.Paginator" Collapsed="true">
+    <Position X="18.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Paginator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ifa.Model.PreviousPage">
+    <Position X="16" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAQAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Model\PreviousPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ifa.Model.Gap">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Gap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ifa.Model.LinkToNextPage">
+    <Position X="11.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\LinkToNextPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ifa.Model.LinkToNextPageBuilder">
+    <Position X="4.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAA=</HashCode>
+      <FileName>Model\LinkToNextPageBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

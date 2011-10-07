@@ -1,0 +1,17 @@
+﻿@model Ifa.Model.PagedResultViewModel<Ifa.Sample1.Models.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div id="themes">
+    <label for="theme">Theme: </label><select id="theme" name="theme" data-url="@Url.Action("Index", new { theme = "0"})">
+        <option value="">Default</option>
+        <option value="custom">Custom</option>
+        <option value="google">Google</option>
+        <option value="github">Github</option>
+    </select>
+</div>
+<div id="products" class="clear">
+@Html.Partial("Products",Model)
+</div>
