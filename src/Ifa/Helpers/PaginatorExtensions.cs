@@ -20,6 +20,9 @@ namespace Ifa.Helpers
             if (null == pagedResult) throw new ArgumentNullException("pagedResult");
             if (null == urlFunc) throw new ArgumentNullException("urlFunc");
 
+            //TODO: Find a better way.
+            htmlHelper.ViewContext.TempData["_totalCount"] = pagedResult.Total;
+
             return DoPagination(htmlHelper,
                 ajaxOptions,
                 new DefaultPaginationBuilder(pagedResult,urlFunc),
