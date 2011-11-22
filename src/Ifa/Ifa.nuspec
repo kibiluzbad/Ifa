@@ -10,6 +10,6 @@
     <iconUrl>http://nuget.org/Media/Default/Packages/Ifa/0.0.2/JOGO%20DE%20IF%C3%81.jpg</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <tags>paging, Paginator, Paginate, pager, ASPNET, MVC3, Pagination, MvcPager</tags>
+    <tags>paging Paginator Paginate pager ASPNET MVC3 Pagination MvcPager</tags>
   </metadata>
 </package>
