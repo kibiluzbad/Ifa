@@ -57,6 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="BaseTemplateTest.cs" />
     <Compile Include="CurrentPageTemplateTests.cs" />
     <Compile Include="CurrentPageTests.cs" />
