@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ifa", "Ifa\Ifa.csproj", "{7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ifa.Tests", "Ifa.Tests\Ifa.Tests.csproj", "{340243E2-3598-4378-AFA3-B8FEA11705E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ifa.Sample1", "Ifa.Sample1\Ifa.Sample1.csproj", "{98E0E18A-AAFC-4AD0-A4C8-4404F45075BF}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DAA87DE4-DCCF-4644-BD9D-0F46FE014FE6}"
 	ProjectSection(SolutionItems) = preProject
 		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
@@ -42,16 +40,6 @@ Global
 		{340243E2-3598-4378-AFA3-B8FEA11705E5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{340243E2-3598-4378-AFA3-B8FEA11705E5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{340243E2-3598-4378-AFA3-B8FEA11705E5}.Release|x86.ActiveCfg = Release|Any CPU
-		{98E0E18A-AAFC-4AD0-A4C8-4404F45075BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98E0E18A-AAFC-4AD0-A4C8-4404F45075BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98E0E18A-AAFC-4AD0-A4C8-4404F45075BF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{98E0E18A-AAFC-4AD0-A4C8-4404F45075BF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{98E0E18A-AAFC-4AD0-A4C8-4404F45075BF}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{98E0E18A-AAFC-4AD0-A4C8-4404F45075BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98E0E18A-AAFC-4AD0-A4C8-4404F45075BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98E0E18A-AAFC-4AD0-A4C8-4404F45075BF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{98E0E18A-AAFC-4AD0-A4C8-4404F45075BF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{98E0E18A-AAFC-4AD0-A4C8-4404F45075BF}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
