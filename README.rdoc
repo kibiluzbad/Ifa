@@ -1,10 +1,10 @@
 == Ifa
 
-Ifa is a customizable paginator for aspnet mvc 3.
+Ifa is a customizable paginator for aspnet mvc 4.
 
 == Install
 
-On your aspnet mvc 3 project instal using Nuget:
+On your aspnet mvc 4 project instal using Nuget:
   install-package Ifa
 	
 == Usage
