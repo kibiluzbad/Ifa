@@ -6,11 +6,11 @@ using System.Reflection;
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyConfiguration("Release")]
 
-[assembly: AssemblyDescription("ASP NET MVC 3 paginator")]
+[assembly: AssemblyDescription("ASP NET MVC 4 paginator")]
 [assembly: AssemblyCompany("kibiluzbad")]
 
-[assembly: AssemblyVersion("1.0.2")]
-[assembly: AssemblyFileVersion("1.0.2")]
+[assembly: AssemblyVersion("1.0.4")]
+[assembly: AssemblyFileVersion("1.0.4")]
 
 
 
