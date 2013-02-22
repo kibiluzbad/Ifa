@@ -15,15 +15,17 @@ Import Ifa to your view:
   @using Ifa.Model
 
 and call the paginate method after the pagination target:
-  @Html.Paginate(Model,url)
+  @Html.Paginate(Model,(itemsPerPage, currentPage) => Url.Action("ActionName", new { itemsPerPage, currentPage}))
 	
 Where Model should be a Ifa.Model.PagedResultViewModel and url should be a function expecting two parameters (itensPerPage and currentPage) and should return url string.
 
 === With ajax
-
+Include jquery.unobtrusive-ajax.js so you can use the ajax mode.
+   <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
+   
 To use the pagination with ajax you just have to informe the AjaxOptions parameter after the url function. Like this:
-  @Html.Paginate(Model,url, new AjaxOptions { OnSuccess = "UpdateAjaxContent"})
-
+  @Html.Paginate(Model,(itemsPerPage, currentPage) => Url.Action("ActionName", new { itemsPerPage, currentPage}), new AjaxOptions { OnSuccess = "UpdateAjaxContent"})
+  
 Is the same AjaxOptions used inside aspnet mvc AjaxHelper so you have the same options.
 In the sample above you have to create the UpdateAjaxContent function to update the pagination area.
 
